@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click, Double-Click, and Hover Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      #clickBox {
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        margin: 20px auto;
+        background-color: lightblue;
+        border: 2px solid darkblue;
+        cursor: pointer;
+      }
+      #hoverBox {
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        margin: 20px auto;
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click, Double-Click, and Hover Example</h1>
+    <div id="clickBox">Click or Double-Click Me!</div>
+    <div id="hoverBox">Hover Over Me!</div>
+
+    <script>
+      const clickBox = document.getElementById("clickBox");
+
+      clickBox.addEventListener("click", () => {
+        clickBox.textContent = "You clicked me!";
+        clickBox.style.backgroundColor = "yellow";
+      });
+
+      clickBox.addEventListener("dblclick", () => {
+        clickBox.textContent = "You double-clicked me!";
+        clickBox.style.backgroundColor = "orange";
+      });
+
+      const hoverBox = document.getElementById("hoverBox");
+
+      hoverBox.addEventListener("mouseover", () => {
+        hoverBox.textContent = "You are hovering over me!";
+        hoverBox.style.backgroundColor = "lightcoral";
+      });
+
+      hoverBox.addEventListener("mouseout", () => {
+        hoverBox.textContent = "Hover Over Me!";
+        hoverBox.style.backgroundColor = "lightgreen";
+      });
+    </script>
+  </body>
+</html>

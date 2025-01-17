@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username or Email</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="button-group">
+          <button type="button" class="login-button" id="login-button">
+            Log In
+          </button>
+          <button type="button" class="reset-button" id="reset-button">
+            Reset
+          </button>
+        </div>
+      </form>
+      <div class="links">
+        <a class="forgot" href="#">Forgot Password?</a>
+        <br />
+        <a class="create" href="#">Create an Account</a>
+      </div>
+    </div>
+
+    <script>
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+      const loginButton = document.getElementById("login-button");
+      const resetButton = document.getElementById("reset-button");
+
+      loginButton.addEventListener("click", function () {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        if (username === "" || password === "") {
+          alert("Please enter both username and password.");
+        } else {
+          console.log("Logging in with:", { username, password });
+          alert(`Welcome, ${username}!`);
+        }
+      });
+      resetButton.addEventListener("dblclick", function () {
+        alert("Double-clicked! Resetting form and clearing all inputs.");
+        usernameInput.value = "";
+        passwordInput.value = "";
+      });
+      loginButton.addEventListener("mouseover", function () {
+        loginButton.style.backgroundColor = "green";
+      });
+      loginButton.addEventListener("mouseout", function () {
+        loginButton.style.backgroundColor = "";
+      });
+    </script>
+  </body>
+</html>
